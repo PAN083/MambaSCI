@@ -8,4 +8,6 @@
 <p align="center">
     <img width=60% src="figs/demo.gif"/>
 </p>
-[Reconstruction](https://imgsli.com/MzA1MjE3)
+
+Try to [drag](https://imgsli.com/MzA1MjE3) by yourself to feel the "before/after slider albums" of obtaining the reconstructed first RGB video frame from the 2D compressed measurement.
+
