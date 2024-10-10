@@ -18,10 +18,15 @@ Try to [drag](https://imgsli.com/MzA1MjE3) by yourself to feel the "before/after
 
 
 ### • Framework
-![image](./figs/pipeline.png)
+<p align="center">
+    <img width=90% src="/figs/pipeline.png"/>
+</p>
+
 
 ### • Model efficiency and effectiveness
-![image](./figs/first.png)
+<p align="center">
+    <img width=60% src="/figs/first.png"/>
+</p>
 
 ## 📧 News
 - **Sept. 26, 2024:** MambaSCI is submitted to NeurIPS 2024 🍁
