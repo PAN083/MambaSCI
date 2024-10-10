@@ -14,10 +14,10 @@ Try to [drag](https://imgsli.com/MzA1MjE3) by yourself to feel the "before/after
 ![](figs/sci.png)
 
 ### • Framework
-![image](./img/pipeline.png)
+![image](./figs/pipeline.png)
 
 ### • Model efficiency and effectiveness
-![image](./img/first.png)
+![image](./figs/first.png)
 
 ## 🔗 Contents
 - [x] [Framework](#Framework)
