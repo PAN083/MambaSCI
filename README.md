@@ -37,3 +37,8 @@ Try to [drag](https://imgsli.com/MzA1MjE3) by yourself to feel the "before/after
 - [ ] [Testing](#testing)
 - [ ] [Results](#Results)
 
+
+<h2 id="license">🎫 License</h2>
+
+This project is released under the MIT license. Please refer to the acknowledged repositories for their licenses.
+
