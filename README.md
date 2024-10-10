@@ -20,8 +20,11 @@ Try to [drag](https://imgsli.com/MzA1MjE3) by yourself to feel the "before/after
 ### • Model efficiency and effectiveness
 ![image](./figs/first.png)
 
+## 📧 News
+- **Sept. 26, 2024:** MambaSCI is submitted to NeurIPS 2024 🍁
+
 ## 🔗 Contents
-- [x] [Installation](#Installation)
+- [ ] [Installation](#Installation)
 - [ ] [Training](#training)
 - [ ] [Testing](#testing)
 - [ ] [Results](#Results)
