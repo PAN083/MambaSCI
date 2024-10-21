@@ -1,5 +1,5 @@
 # 🐍 MambaSCI: Efficient Mamba-UNet for Quad-Bayer Patterned Video Snapshot Compressive Imaging
-![arxiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](http://arxiv.org/abs/2410.14214)
+[![arxiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](http://arxiv.org/abs/2410.14214)
 ![Language](https://img.shields.io/badge/language-python-brightgreen) 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=PAN083/MambaSCI)
 
