@@ -90,7 +90,7 @@ python tools/train.py configs/Mamba/mamba_dp.py
 
 <h2 id="testing">⚡ Testing</h2>
 
-Download [checkpoint](https://drive.google.com/drive/my-drive) from website and put it into ./checkpoints
+Download [checkpoint](https://drive.google.com/file/d/1PqgCah35nNRbZGX7ctPvNVRZideaGabe/view?usp=drive_link) from website and put it into ./checkpoints
 
 Then run
 ```shell
