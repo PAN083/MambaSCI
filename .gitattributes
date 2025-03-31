@@ -1,0 +1,2 @@
+/home/homesdb/zhpan/MambaSCI/checkpoints/epoch_49.pth filter=lfs diff=lfs merge=lfs -text
+mamba/dist/mamba_ssm-1.0.1-py3.9-linux-x86_64.egg filter=lfs diff=lfs merge=lfs -text
