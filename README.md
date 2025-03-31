@@ -33,9 +33,9 @@ Try to [drag](https://imgsli.com/MzA1MjE3) by yourself to feel the "before/after
 - **Sept. 26, 2024:** MambaSCI is submitted to NeurIPS 2024 🍁
 
 ## 🔗 Contents
-- [ ] [Installation](#Installation)
-- [ ] [Training](#training)
-- [ ] [Testing](#testing)
+- [x] [Installation](#environment-installation)
+- [x] [Training](#training)
+- [x] [Testing](#testing)
 - [ ] [Results](#Results)
 
 
