@@ -39,4 +39,78 @@ Try to [drag](https://imgsli.com/MzA1MjE3) by yourself to feel the "before/after
 - [ ] [Results](#Results)
 
 
+<h2 id="environment-installation">🔨 Environment Installation</h2>
+
+**1️⃣**
+Make conda environment
+
+```shell
+git clone https://github.com/PAN083/MambaSCI.git
+
+cd MambaSCI
+
+conda create -n MambaSCI
+
+conda activate MambaSCI
+
+pip install -r requirements.txt
+```
+**2️⃣**
+Install Mamba
+
+```shell
+cd mamba
+
+python setup.py install
+```
+
+**3️⃣**
+Install casual-conv1d
+
+```shell
+cd causal-conv1d
+
+python setup.py install
+```
+
+<h2 id="training">🏋️ Training</h2>
+
+First download DAVIS 2017 dataset from [DAVIS website](https://davischallenge.org/), then modify data_root value in configs/_base_/davis.py file, make sure data_root link to your training dataset path.
+
+Launch multi GPU training by the statement below:
+
+```shell
+CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4  --master_port=3278 tools/train.py configs/Mamba/mamba_dp.py --distributed=True
+```
+Launch single GPU training by the statement below.
+```shell
+python tools/train.py configs/Mamba/mamba_dp.py
+```
+
+
+<h2 id="testing">⚡ Testing</h2>
+
+Download [checkpoint](https://drive.google.com/drive/my-drive) from website and put it into ./checkpoints
+
+Then run
+```shell
+python tools/test.py configs/Mamba/mamba_dp.py --weights= "way to checkpoints"
+```
+
+<h2 id="citation">🎓 Citation</h2>
+If you find this repository helpful to your research, please consider citing the following:
+
+```
+@article{pan2024mambasci,
+  title={MambaSCI: Efficient Mamba-UNet for Quad-Bayer Patterned Video Snapshot Compressive Imaging},
+  author={Pan, Zhenghao and Zeng, Haijin and Cao, Jiezhang and Chen, Yongyong and Zhang, Kai and Xu, Yong},
+  journal={arXiv preprint arXiv:2410.14214},
+  year={2024}
+}
+```
+
+
+🤗 Acknowledgement
+
+This code is based on [STFormer](https://github.com/ucaswangls/STFormer), [LightM-UNet](https://github.com/MrBlankness/LightM-UNet),[Vivim](https://github.com/scott-yjyang/Vivim) , [MambaIR](https://github.com/csguoh/MambaIR). Thank them for their outstanding work. 
 
