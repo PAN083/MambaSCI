@@ -1,0 +1,5 @@
+# ninja log v5
+0	3964	1722527866852178989	/home/homesdb/zhpan/STFormer/causal-conv1d/build/temp.linux-x86_64-3.9/csrc/causal_conv1d_update.o	4ea1b299b2ceff33
+0	10297	1722527873176291743	/home/homesdb/zhpan/STFormer/causal-conv1d/build/temp.linux-x86_64-3.9/csrc/causal_conv1d_fwd.o	af87170cd38d2d1a
+0	17802	1722527880688425666	/home/homesdb/zhpan/STFormer/causal-conv1d/build/temp.linux-x86_64-3.9/csrc/causal_conv1d.o	42954f575173d235
+12	30046	1722528460866737572	/home/homesdb/zhpan/STFormer/causal-conv1d/build/temp.linux-x86_64-3.9/csrc/causal_conv1d_bwd.o	1d12f5fd0fb53247

@@ -1,0 +1,12 @@
+# ninja log v5
+1	17230	1722528087644110132	/home/homesdb/zhpan/STFormer/mamba/build/temp.linux-x86_64-3.9/csrc/selective_scan/selective_scan.o	9de88a9bfa7d7e04
+2	59659	1722528130064864341	/home/homesdb/zhpan/STFormer/mamba/build/temp.linux-x86_64-3.9/csrc/selective_scan/selective_scan_fwd_fp16.o	a336a5b5b007e9e8
+2	60794	1722528131196884463	/home/homesdb/zhpan/STFormer/mamba/build/temp.linux-x86_64-3.9/csrc/selective_scan/selective_scan_fwd_fp32.o	f78f810156d585eb
+2	61115	1722528131520890223	/home/homesdb/zhpan/STFormer/mamba/build/temp.linux-x86_64-3.9/csrc/selective_scan/selective_scan_fwd_bf16.o	d2f6ef3807a1a952
+2	106825	1722528177217702350	/home/homesdb/zhpan/STFormer/mamba/build/temp.linux-x86_64-3.9/csrc/selective_scan/selective_scan_bwd_fp32_real.o	cd00da451f16972b
+1	109168	1722528179565744072	/home/homesdb/zhpan/STFormer/mamba/build/temp.linux-x86_64-3.9/csrc/selective_scan/selective_scan_bwd_fp16_real.o	c7a1bc1341bdb3aa
+1	112397	1722528182793801427	/home/homesdb/zhpan/STFormer/mamba/build/temp.linux-x86_64-3.9/csrc/selective_scan/selective_scan_bwd_bf16_real.o	7db7cf1b04b97b87
+1	145817	1722528216198394879	/home/homesdb/zhpan/STFormer/mamba/build/temp.linux-x86_64-3.9/csrc/selective_scan/selective_scan_bwd_fp32_complex.o	feea2fe0d9ff63b4
+1	148416	1722528218786440851	/home/homesdb/zhpan/STFormer/mamba/build/temp.linux-x86_64-3.9/csrc/selective_scan/selective_scan_bwd_fp16_complex.o	706af01a6279f908
+1	151784	1722528222166500890	/home/homesdb/zhpan/STFormer/mamba/build/temp.linux-x86_64-3.9/csrc/selective_scan/selective_scan_bwd_bf16_complex.o	931d530754de82dc
+10	17361	1722572256005924800	/home/homesdb/zhpan/STFormer/mamba/build/temp.linux-x86_64-3.9/csrc/selective_scan/selective_scan.o	9de88a9bfa7d7e04
