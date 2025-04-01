@@ -101,11 +101,10 @@ python tools/test.py configs/Mamba/mamba_dp.py --weights= "way to checkpoints"
 If you find this repository helpful to your research, please consider citing the following:
 
 ```
-@article{pan2024mambasci,
+@inproceedings{panmambasci,
   title={MambaSCI: Efficient Mamba-UNet for Quad-Bayer Patterned Video Snapshot Compressive Imaging},
   author={Pan, Zhenghao and Zeng, Haijin and Cao, Jiezhang and Chen, Yongyong and Zhang, Kai and Xu, Yong},
-  journal={arXiv preprint arXiv:2410.14214},
-  year={2024}
+  booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems}
 }
 ```
 
