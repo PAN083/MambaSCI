@@ -111,5 +111,5 @@ If you find this repository helpful to your research, please consider citing the
 
 🤗 Acknowledgement
 
-This code is based on [STFormer](https://github.com/ucaswangls/STFormer), [LightM-UNet](https://github.com/MrBlankness/LightM-UNet),[Vivim](https://github.com/scott-yjyang/Vivim) , [MambaIR](https://github.com/csguoh/MambaIR). Thank them for their outstanding work. 
+This code is based on [STFormer](https://github.com/ucaswangls/STFormer), [LightM-UNet](https://github.com/MrBlankness/LightM-UNet), [Vivim](https://github.com/scott-yjyang/Vivim), [MambaIR](https://github.com/csguoh/MambaIR). Thank them for their outstanding work. 
 
