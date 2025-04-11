@@ -138,16 +138,6 @@ class DWConv(nn.Module):
         return x
 
 
-
-class ParallelChunkProcessor(nn.Module):
-    def __init__(self, original_forward_func):
-        super().__init__()
-        self.original_forward_func = original_forward_func
-
-    def forward(self, x_chunk):
-        return self.original_forward_func(x_chunk)
-
-
 class MambaLayer(nn.Module):
     def __init__(self, input_dim, output_dim, d_state = 16, d_conv = 4, expand = 2, mlp_ratio=4,drop_path=0.,drop=0.,act_layer=nn.GELU):
         super().__init__()
@@ -179,40 +169,9 @@ class MambaLayer(nn.Module):
         
         B, C, nf, H, W= x.shape
         assert C == self.input_dim
-
-        num_chunk = nf // 8
-        chunks = [x[:, :, i*8:(i+1)*8, :, :] for i in range(num_chunk)]
-
-    # 创建并行处理器
-        parallel_processor = ParallelChunkProcessor(self._process_chunk)
-        
-        # 使用parallel_apply并行处理所有chunk
-        outputs = nn.parallel.parallel_apply([parallel_processor] * num_chunk, chunks)
-
-        # 在时间维度上拼接结果
-        final_out = torch.cat(outputs, dim=2)
-        return final_out
-    
-    def _process_chunk(self, x_chunk):
-        # outputs = []
-        # for i in range(num_chunk):
-        #     x_chunk = x[:, :, i*8:(i+1)*8, :, :]
-        
-
-        # n_tokens = 131072
-        B,C,T,H,W = x_chunk.shape
-        n_tokens = x_chunk.shape[2:].numel()
-        img_dims = x_chunk.shape[2:]
-        x_flat = x_chunk.reshape(B, C, n_tokens).transpose(-1, -2)
-    
-    # x_norm = self.norm1(x_flat)
-    # x1, x2, x3, x4 = torch.chunk(x_norm,4,dim=2)
-    # x_mamba1 = self.drop_path(self.mamba(x1))
-    # x_mamba2 = self.drop_path(self.mamba(x2))
-    # x_mamba3 = self.drop_path(self.mamba(x3))
-    # x_mamba4 = self.drop_path(self.mamba(x4))
-    # x_mamba = torch.cat([x_mamba1, x_mamba2,x_mamba3,x_mamba4], dim=2)
-    # x_mamba = x_flat*self.skip_scale1 + x_mamba
+        n_tokens = x.shape[2:].numel()
+        img_dims = x.shape[2:]
+        x_flat = x.reshape(B, C, n_tokens).transpose(-1, -2)
 
         '''Residual connection'''
         x_mamba = x_flat * self.skip_scale1 + self.drop_path(self.mamba(self.norm1(x_flat)))
@@ -224,30 +183,6 @@ class MambaLayer(nn.Module):
         out = out * self.skip_scale3 + self.conv_blk(self.norm3(out).permute(0,4,1,2,3).contiguous()).permute(0,2,3,4,1).contiguous()
         out = out.permute(0,4,1,2,3).contiguous()
         return out
-
-    #     outputs.append(out)
-    # final_out = torch.cat(outputs, dim=2)
-    # return final_out
-        '''no learnable scale'''
-        # x_mamba = x_flat  + self.drop_path(self.mamba(self.norm1(x_flat)))
-        # x_mamba = x_mamba  + self.drop_path(self.mlp(self.norm2(x_mamba), nf, H, W))
-        # x_mamba = self.proj(x_mamba)
-        # out = x_mamba.transpose(-1, -2).reshape(B, self.output_dim, *img_dims)
-        # #B C T H W
-        # out = out.permute(0,2,3,4,1).contiguous()
-        # out = out  + self.conv_blk(self.norm3(out).permute(0,4,1,2,3).contiguous()).permute(0,2,3,4,1).contiguous()
-        # out = out.permute(0,4,1,2,3).contiguous()
-        # return out
-
-        # x_mamba = self.drop_path(self.mamba(self.norm1(x_flat)))
-        # x_mamba = self.drop_path(self.mlp(self.norm2(x_mamba), nf, H, W))
-        # x_mamba = self.proj(x_mamba)
-        # out = x_mamba.transpose(-1, -2).reshape(B, self.output_dim, *img_dims)
-        # #B C T H W
-        # out = out.permute(0,2,3,4,1).contiguous()
-        # out = self.conv_blk(self.norm3(out).permute(0,4,1,2,3).contiguous()).permute(0,2,3,4,1).contiguous()
-        # out = out.permute(0,4,1,2,3).contiguous()
-        # return out
 
 def get_mamba_layer(
     spatial_dims: int, in_channels: int, out_channels: int, nframes: int, stride: int = 1
